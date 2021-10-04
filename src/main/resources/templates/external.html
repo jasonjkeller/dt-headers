@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+  <title>Request/Response Info</title>
+</head>
+
+<body>
+<h1>External URL</h1>
+<p th:text="${external_url}"></p>
+<br>
+
+<h1>HTTP Request Info</h1>
+
+<h2>Request Headers Pre Agent Instrumentation</h2>
+<table>
+  <tr th:each="header : ${request_headers_pre}">
+    <td th:text="${header}"></td>
+  </tr>
+</table>
+<br>
+
+<h2>Request Headers Post Agent Instrumentation</h2>
+<table>
+  <tr th:each="header : ${request_headers_post}">
+    <td th:text="${header}"></td>
+  </tr>
+</table>
+<br>
+
+<h1>HTTP Response Info</h1>
+
+<h2>Response</h2>
+<p th:text="${response}"></p>
+<br>
+
+<h2>Response Code</h2>
+<p th:text="${status_code}"></p>
+<br>
+
+<h2>Response Message</h2>
+<p th:text="${status_message}"></p>
+<br>
+
+<h2>Response Body</h2>
+<p th:text="${response_body}"></p>
+<br>
+
+<h2>Response Headers</h2>
+<table>
+  <tr th:each="header : ${response_headers}">
+    <td th:text="${header}"></td>
+  </tr>
+</table>
+
+</body>
+</html>
